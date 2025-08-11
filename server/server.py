@@ -3,6 +3,8 @@ import util
 
 app = Flask(__name__)
 
+util.load_saved_artifacts()
+
 @app.route('/get_location_names')
 def get_location_names():
     response = jsonify({
@@ -28,7 +30,7 @@ def get_estimated_price():
 def hello():
     return "Hello World from Flask Server!"
 
-if __name__ == "__main__":
-    print("Starting Python Flask Server for Home Price Prediction...")
-    util.load_saved_artifacts()
-    app.run()
+# if __name__ == "__main__":
+#     print("Starting Python Flask Server for Home Price Prediction...")
+#     util.load_saved_artifacts()
+#     app.run()
