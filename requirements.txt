@@ -1,6 +1,4 @@
 Flask
-request
-jsonify
-json 
-pickle
 numpy
+scikit-learn
+Flask-Cors
