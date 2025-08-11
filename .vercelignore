@@ -1,0 +1,8 @@
+# Ignore the folder containing the training data
+Dataset/
+
+# Ignore the Python virtual environment folder
+env/
+
+# Ignore Jupyter Notebooks, which are not needed for the server
+*.ipynb
