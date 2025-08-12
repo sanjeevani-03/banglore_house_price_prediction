@@ -1,9 +1,7 @@
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify
 import util
-import os
 
-# app = Flask(__name__)
-app = Flask(__name__, static_folder='../client', static_url_path='/')
+app = Flask(__name__)
 
 util.load_saved_artifacts()
 
@@ -31,14 +29,6 @@ def get_estimated_price():
 @app.route('/hello')
 def hello():
     return "Hello World from Flask Server!"
-
-@app.route("/", defaults={'path': ''})
-@app.route("/<path:path>")
-def serve(path):
-    if path != "" and os.path.exists(app.static_folder + '/' + path):
-        return send_from_directory(app.static_folder, path)
-    else:
-        return send_from_directory(app.static_folder, 'app.html')
 
 # if __name__ == "__main__":
 #     print("Starting Python Flask Server for Home Price Prediction...")
