@@ -7,7 +7,7 @@ app = Flask(__name__, static_folder='../client', static_url_path='/')
 
 util.load_saved_artifacts()
 
-@app.route('/get_location_names')
+@app.route('api/get_location_names')
 def get_location_names():
     response = jsonify({
         'locations':util.get_location_names()
@@ -15,7 +15,7 @@ def get_location_names():
     response.headers.add('Access-Control-Allow-Origin', '*')
     return response
 
-@app.route('/predict_home_price', methods=['POST'])
+@app.route('api/predict_home_price', methods=['POST'])
 def get_estimated_price():
     total_sqft = float(request.form['total_sqft'])
     location = request.form['location']
